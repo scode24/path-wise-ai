@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# PathWise AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**PathWise AI** is a dynamic learning path generator that helps users create personalized learning paths for any topic they choose. Developed using React 18, Tailwind CSS, Express, Node.js, Gemini 1.5 Flash API, and YouTube API, this app allows users to easily explore, track, and complete their learning journeys.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Prompt-Based Learning Path Generation**: Enter a topic prompt, and PathWise AI will generate a comprehensive learning path.
+- **Video References**: Each step in the learning path is supplemented with relevant YouTube videos for better understanding.
+- **Progress Tracking**: Save your learning path locally and mark topics as completed. Track your progress with a completion percentage.
+- **Light/Dark Mode**: Switch between light and dark modes for a comfortable viewing experience.
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - React 18
+  - Tailwind CSS
 
-### `npm test`
+- **Backend**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Express.js
+  - Node.js
 
-### `npm run build`
+- **APIs**:
+  - Gemini 1.5 Flash API for learning path generation
+  - YouTube API for fetching relevant video content
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Open your browser and navigate to `http://localhost:3000` to use the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Generate a Learning Path**:
 
-### `npm run eject`
+   - Enter a learning topic in the prompt input.
+   - PathWise AI will generate a step-by-step learning path with video references.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Track Your Progress**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   - As you complete each step, mark it as "completed."
+   - View your overall progress percentage.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Switch Between Light and Dark Mode**:
+   - Use the toggle button to switch between light and dark mode according to your preference.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+We welcome contributions! Please follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the repository.
+2. Create a new branch (\`git checkout -b feature-branch\`).
+3. Commit your changes (\`git commit -m 'Add new feature'\`).
+4. Push to the branch (\`git push origin feature-branch\`).
+5. Create a new Pull Request.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgements
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Special thanks to the open-source community for providing tools and libraries that made this project possible.
