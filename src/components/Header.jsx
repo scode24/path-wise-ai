@@ -35,7 +35,7 @@ const Header = () => {
               label: "GitHub",
               isTextBold: false,
             }}
-            onClickFn={() => console.log("Icon clicked!")}
+            onClickFn={() => window.open(process.env.REACT_APP_GITHUB_LINK)}
           />
 
           <Button
