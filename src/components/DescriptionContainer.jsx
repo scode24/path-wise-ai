@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   ArrowLeft,
   ArrowRight,
@@ -9,6 +10,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import useMessageStore from "../stores/MessageStore";
 import usePathInfoStore from "../stores/PathInfoStore";
 
 const YouTubeVideoLinkInfo = (props) => {
@@ -16,7 +18,7 @@ const YouTubeVideoLinkInfo = (props) => {
 
   return (
     <div
-      className="flex flex-row border-b p-3"
+      className="flex flex-row border-b p-3 cursor-pointer"
       onClick={() => window.open(videoLink)}
     >
       <img
@@ -32,8 +34,32 @@ const YouTubeVideoLinkInfo = (props) => {
 };
 
 const FetchRefVideoLink = (props) => {
+  const { topic, index } = props.data;
+  const { pathInfo, updatePathInfo } = usePathInfoStore();
+  const { showMessage, closeMessage } = useMessageStore();
+
+  const getRefVideoInfo = async () => {
+    try {
+      showMessage("Fetching reference video", "info");
+      const response = await axios.post(
+        process.env.REACT_APP_SERVICE_API_BASE_URL + "/getRefVideoInfo",
+        {
+          topic: localStorage.getItem("promptQuery") + "," + topic,
+        }
+      );
+
+      if (response.data.length > 0) {
+        pathInfo[index].refVideosInfo = response.data;
+        updatePathInfo(pathInfo, "done");
+        closeMessage();
+      }
+    } catch (err) {
+      showMessage(err.message, "error");
+    }
+  };
+
   return (
-    <div className="flex flex-row p-3 cursor-pointer">
+    <div className="flex flex-row p-3 cursor-pointer" onClick={getRefVideoInfo}>
       <div className="rounded-md centerdiv border w-[120px] h-[90px] p-2">
         <div className="flex flex-row justify-center w-full">
           <Download size={30} strokeWidth={1} />
@@ -50,9 +76,7 @@ const FetchRefVideoLink = (props) => {
 const DescriptionContainer = () => {
   const param = useParams();
   const index = Number(param?.index);
-  const { pathInfo, fetchDataStatus, updatePathInfo } = usePathInfoStore();
-
-  console.log(pathInfo[index].refVideosInfo);
+  const { pathInfo } = usePathInfoStore();
 
   const navigator = useNavigate();
 
@@ -140,7 +164,7 @@ const DescriptionContainer = () => {
             <div className="flex flex-col">
               {pathInfo[index].refVideosInfo !== undefined ? (
                 <>
-                  {pathInfo[index].refVideosInfo.map((videoLink, index) => {
+                  {pathInfo[index].refVideosInfo.map((videoLink) => {
                     return (
                       <YouTubeVideoLinkInfo
                         data={{
@@ -155,7 +179,12 @@ const DescriptionContainer = () => {
                 </>
               ) : (
                 <>
-                  <FetchRefVideoLink />
+                  <FetchRefVideoLink
+                    data={{
+                      topic: pathInfo[index].title,
+                      index: index,
+                    }}
+                  />
                 </>
               )}
             </div>
