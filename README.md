@@ -4,6 +4,8 @@
 
 **PathWise AI** is a dynamic learning path generator that helps users create personalized learning paths for any topic they choose. Developed using React 18, Tailwind CSS, Express, Node.js, Gemini 1.5 Flash API, and YouTube API, this app allows users to easily explore, track, and complete their learning journeys.
 
+#### Live - http://89.116.33.28:4545/
+
 ## Features
 
 - **Prompt-Based Learning Path Generation**: Enter a topic prompt, and PathWise AI will generate a comprehensive learning path.
