@@ -14,33 +14,43 @@
 ## Technology Stack
 
 - **Frontend**:
-
   - React 18
   - Tailwind CSS
-
 - **Backend**:
-
   - Express.js
   - Node.js
-
 - **APIs**:
   - Gemini 1.5 Flash API for learning path generation
   - YouTube API for fetching relevant video content
 
-5. Open your browser and navigate to `http://localhost:3000` to use the app.
+## Docker Information
+
+PathWise AI is containerized to simplify deployment. You can find the Docker images (in
+linux/amd64 arch) for both the frontend and backend on Docker Hub:
+
+- **Backend Docker Image**:
+  - Repository: [soumyabrata024/pathwise-ai-backend](https://hub.docker.com/repository/docker/soumyabrata024/pathwise-ai-backend/general)
+  - Run the backend container with the following command:
+    ```bash
+    docker pull soumyabrata024/pathwise-ai-backend:latest
+    docker run -d -p 4545:3000 soumyabrata024/pathwise-ai-backend:1.0
+    ```
+- **Frontend Docker Image**:
+  - Repository: [soumyabrata024/pathwise-ai-ui](https://hub.docker.com/repository/docker/soumyabrata024/pathwise-ai-ui/general)
+  - Run the frontend container with the following command:
+    ```bash
+    docker pull soumyabrata024/pathwise-ai-ui:latest
+    docker run -d -p 3001:3001 soumyabrata024/pathwise-ai-ui:1.0
+    ```
 
 ## Usage
 
 1. **Generate a Learning Path**:
-
    - Enter a learning topic in the prompt input.
    - PathWise AI will generate a step-by-step learning path with video references.
-
 2. **Track Your Progress**:
-
    - As you complete each step, mark it as "completed."
    - View your overall progress percentage.
-
 3. **Switch Between Light and Dark Mode**:
    - Use the toggle button to switch between light and dark mode according to your preference.
 
@@ -49,9 +59,9 @@
 We welcome contributions! Please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch (\`git checkout -b feature-branch\`).
-3. Commit your changes (\`git commit -m 'Add new feature'\`).
-4. Push to the branch (\`git push origin feature-branch\`).
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
 ## Acknowledgements
